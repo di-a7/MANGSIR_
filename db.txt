@@ -1,0 +1,11 @@
+# Requirement Gathering
+# Database Design
+
+# Todolist
+-  id             Integer
+-  Title          String
+-  descripition   String
+-  status         Boolean 
+-  Priority       int(enum)
+-  created        datetime
+-  updated        datetime
