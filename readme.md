@@ -38,3 +38,29 @@ python manage.py makemigrations
 
 # migrate to the table
 python manage.py migrate
+
+# activate shell
+python manage.py shell
+
+# CRUD
+# get all the data of a table(model class)
+model_name.objects.all()
+model_name.objects.all().values()      # shows all the details of the datas
+
+# Create
+model_name.objects.create(field1 = field1, field2 = field2, .....)
+
+# Retrieve a data(single data get)
+model_name.objects.get(id = 3)
+
+# Update existing data
+retrieve the data that is to be updated and store it in a variable(a)
+a.title = "new data"       # update
+a.save()       # needs to be saved manuallty
+
+# Delete a data
+a.delete()
+
+# filter the data
+model_name.objects.filter(field1 = "....")
+model_name.objects.filter(field1 = "....", field2 = ".....")
