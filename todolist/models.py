@@ -6,6 +6,9 @@ class Todolist(models.Model):
    title = models.CharField(max_length=75)
    description = models.TextField(blank=True, null=True)
    status = models.BooleanField(null=True, blank=True, default=False)
+   
+   def __str__(self):
+      return f"{self.title} - {self.status}"
 
 # model_class -> migration_file -> migrate(database_tables)
 
