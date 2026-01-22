@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Todolist
+
 # Create your views here.
 def home(request):
    people_data = [
@@ -25,7 +26,7 @@ def about_us(request):
 
 def todolist(request):
    todolist = Todolist.objects
-   tasks = todolist.all()
+   tasks = todolist.all()           # Todolist.objects.all()
    total = tasks.count()
    completed = todolist.filter(status = True).count()
    incompleted = todolist.filter(status = False).count()
@@ -38,3 +39,13 @@ def todolist(request):
    }
    
    return render(request, 'todolist.html', context) 
+
+def create_tasks(request):
+   if request.method == 'POST':
+      user_title = request.POST.get('abc')         #{"title":"ram"}
+      user_description = request.POST.get('description')         #{"title":"ram"}
+      Todolist.objects.create(title = user_title, description = user_description)
+      return redirect('/todolist/')
+   return render(request,'create.html')
+
+# {'title':"ram", 'description':"abc"}

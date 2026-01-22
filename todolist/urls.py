@@ -5,4 +5,5 @@ urlpatterns = [
    path('home/',home),
    path('about_us/',about_us),
    path('todolist/',todolist),
+   path('todolist/create/',create_tasks),
 ]

@@ -64,3 +64,6 @@ a.delete()
 # filter the data
 model_name.objects.filter(field1 = "....")
 model_name.objects.filter(field1 = "....", field2 = ".....")
+
+# superuser create
+python manage.py creatsuperuser -> username, password
