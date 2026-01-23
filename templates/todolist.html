@@ -16,6 +16,7 @@
          <th scope="col">Title</th>
          <th scope="col">Description</th>
          <th scope="col">Status</th>
+         <th scope="col">Actions</th>
       </tr>
    </thead>
    <tbody>
@@ -35,9 +36,16 @@
             </span>
             {% endif %}
          </td>
+         <td>
+            <a href={{task.id}} type="button" class="btn btn-success">Complete</a>
+            <a href={{task.id}}/edit/ type="button" class="btn btn-primary">Edit</a>
+            <a href={{task.id}}/delete/ type="button" class="btn btn-danger">Delete</a>
+         </td>
       </tr>
       {% endfor %}
    </tbody>
 </table>
 </div>
 {% endblock body %}
+
+<!-- todolist/13/ -->

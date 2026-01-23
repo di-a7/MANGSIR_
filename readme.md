@@ -51,7 +51,7 @@ model_name.objects.all().values()      # shows all the details of the datas
 model_name.objects.create(field1 = field1, field2 = field2, .....)
 
 # Retrieve a data(single data get)
-model_name.objects.get(id = 3)
+a = model_name.objects.get(id = 3)
 
 # Update existing data
 retrieve the data that is to be updated and store it in a variable(a)
@@ -67,3 +67,15 @@ model_name.objects.filter(field1 = "....", field2 = ".....")
 
 # superuser create
 python manage.py creatsuperuser -> username, password
+
+# dotenv install
+python manage.py python-dotenv
+
+# create requirements.txt
+pip freeze > requirements.txt
+
+# install the requirements.txt
+pip install -r requirements.txt
+
+# uninstall the requirements.txt
+pip uninstall -r requirements.txt
